@@ -543,7 +543,7 @@ a.theme-btn {
   background-color: #FFFFFF;
   background-repeat: no-repeat;
   background-position: center center;
-  background-image: url(../images/preloader.gif); }
+   }
 
 /* Pagination */
 .pagination {

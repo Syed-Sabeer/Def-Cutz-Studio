@@ -2,7 +2,394 @@
 
 
 @section('css')
-
+<style>
+    /* Circular Gallery Styles */
+    .circular-gallery {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding: 40px 0;
+    }
+    
+    .circular-gallery-item {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    
+    .circular-gallery-item:hover {
+        transform: translateY(-15px) scale(1.05);
+    }
+    
+    .circular-gallery-item::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffd700, #ff6b6b, #4ecdc4, #ffd700);
+        background-size: 300% 300%;
+        animation: gradient-rotate 3s ease infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+    
+    .circular-gallery-item:hover::before {
+        opacity: 0.6;
+    }
+    
+    @keyframes gradient-rotate {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    
+    .circular-gallery-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2),
+                    0 0 0 3px rgba(255, 215, 0, 0.3);
+        transition: all 0.4s ease;
+    }
+    
+    .circular-gallery-item:hover .circular-gallery-image {
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3),
+                    0 0 0 8px rgba(255, 215, 0, 0.5);
+    }
+    
+    .circular-gallery-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.9), rgba(255, 107, 107, 0.9));
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.4s ease;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .circular-gallery-item:hover .circular-gallery-overlay {
+        opacity: 1;
+    }
+    
+    .circular-gallery-overlay h3 {
+        font-size: 22px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        transform: translateY(20px);
+        transition: transform 0.4s ease 0.1s;
+    }
+    
+    .circular-gallery-item:hover .circular-gallery-overlay h3 {
+        transform: translateY(0);
+    }
+    
+    .circular-gallery-overlay p {
+        font-size: 14px;
+        margin-bottom: 15px;
+        opacity: 0.95;
+        transform: translateY(20px);
+        transition: transform 0.4s ease 0.15s;
+    }
+    
+    .circular-gallery-item:hover .circular-gallery-overlay p {
+        transform: translateY(0);
+    }
+    
+    .circular-gallery-overlay .details-btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 18px;
+        text-decoration: none;
+        transform: scale(0) rotate(-180deg);
+        transition: all 0.4s ease 0.2s;
+        backdrop-filter: blur(10px);
+    }
+    
+    .circular-gallery-item:hover .circular-gallery-overlay .details-btn {
+        transform: scale(1) rotate(0deg);
+    }
+    
+    .circular-gallery-overlay .details-btn:hover {
+        background: rgba(255, 255, 255, 0.5);
+        transform: scale(1.1) rotate(360deg);
+    }
+    
+    @media (max-width: 768px) {
+        .circular-gallery-item {
+            width: 220px;
+            height: 220px;
+        }
+        
+        .circular-gallery {
+            gap: 30px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .circular-gallery-item {
+            width: 180px;
+            height: 180px;
+        }
+    }
+    
+    /* About Us Section - Circular Design for Mobile */
+    .about-us-area {
+        position: relative;
+        padding: 60px 0;
+    }
+    
+    .about-us-circular-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .about-circular-image-wrapper {
+        position: relative;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .about-circular-image {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 5px solid #fff;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15),
+                    0 0 0 4px rgba(255, 215, 0, 0.2);
+        transition: all 0.4s ease;
+    }
+    
+    .about-circular-image-wrapper:hover .about-circular-image {
+        transform: scale(1.1);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25),
+                    0 0 0 6px rgba(255, 215, 0, 0.4);
+    }
+    
+    .about-circular-image-wrapper::before {
+        content: '';
+        position: absolute;
+        top: -6px;
+        left: -6px;
+        right: -6px;
+        bottom: -6px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #ffd700, #ff6b6b, #4ecdc4);
+        background-size: 200% 200%;
+        animation: gradient-rotate 4s ease infinite;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: -1;
+    }
+    
+    .about-circular-image-wrapper:hover::before {
+        opacity: 0.5;
+    }
+    
+    /* Desktop Layout */
+    @media (min-width: 992px) {
+        .about-us-area .row {
+            display: flex;
+            align-items: center;
+        }
+        
+        .about-left-image,
+        .about-right-image {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .about-left-image img,
+        .about-right-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-left-image:hover img,
+        .about-right-image:hover img {
+            transform: scale(1.05);
+        }
+    }
+    
+    /* Tablet Layout */
+    @media (max-width: 991px) and (min-width: 768px) {
+        .about-us-circular-wrapper {
+            gap: 30px;
+        }
+        
+        .about-circular-image-wrapper {
+            width: 200px;
+            height: 200px;
+        }
+    }
+    
+    /* Mobile Layout - Stack Images Vertically or Horizontally with Circular Design */
+    @media (max-width: 767px) {
+        .about-us-area {
+            padding: 15px 0 30px 0;
+        }
+        
+        .about-us-area .container {
+            padding-top: 0 !important;
+        }
+        
+        .about-us-area .row {
+            flex-direction: column;
+            margin-top: 0;
+        }
+        
+        .about-us-area .row > div {
+            padding-top: 0;
+        }
+        
+        .about-left-image,
+        .about-right-image {
+            display: none; /* Hide original images on mobile */
+        }
+        
+        .about-us-circular-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin: 10px 0 20px 0;
+            order: -1; /* Show images before content on mobile */
+        }
+        
+        .about-circular-image-wrapper {
+            width: 170px;
+            height: 170px;
+        }
+        
+        .about-content {
+            padding: 15px 15px !important;
+            padding-top: 5px !important;
+        }
+        
+        .about-content .section-title h2 {
+            font-size: 24px;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        
+        .our-author {
+            flex-direction: column;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .our-author img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            object-fit: cover;
+        }
+        
+        .our-author .content {
+            margin-left: 0;
+        }
+        
+        .our-author .content img {
+            width: 120px;
+            height: auto;
+            margin-top: 10px;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .about-us-area {
+            padding: 10px 0 25px 0;
+        }
+        
+        .about-us-area .container {
+            padding-top: 0 !important;
+        }
+        
+        .about-us-circular-wrapper {
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 5px 0 15px 0;
+        }
+        
+        .about-circular-image-wrapper {
+            width: 150px;
+            height: 150px;
+        }
+        
+        .about-content .section-title h2 {
+            font-size: 22px;
+        }
+        
+        .about-content p {
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .about-us-area {
+            padding: 5px 0 20px 0;
+        }
+        
+        .about-us-area .container {
+            padding-top: 0 !important;
+        }
+        
+        .about-us-circular-wrapper {
+            gap: 15px;
+            margin: 0 0 15px 0;
+        }
+        
+        .about-content {
+            padding-top: 0 !important;
+        }
+        
+        .about-circular-image-wrapper {
+            width: 130px;
+            height: 130px;
+        }
+        
+        .about-circular-image {
+            border-width: 4px;
+        }
+    }
+</style>
 @endsection
 
 @section('content')
@@ -104,35 +491,54 @@
 
         <!-- About Us Area Start -->
         <section class="about-us-area">
-            <div class="row">
-                <div class="col-xl-3 col-sm-6">
-                    <div class="about-left-image wow fadeInUp delay-0-2s">
-                        <img src="{{ asset('FrontendAssets/images/about/about-left.jpg')}}" alt="About Left">
+            <div class="container">
+                <div class="row">
+                    <!-- Circular Images for Mobile (shown on mobile, hidden on desktop) -->
+                    <div class="col-12 d-md-none">
+                        <div class="about-us-circular-wrapper wow fadeInUp delay-0-2s">
+                            <div class="about-circular-image-wrapper">
+                                <img src="{{ asset('FrontendAssets/images/about/about-left.jpg')}}" alt="About Left" class="about-circular-image">
+                            </div>
+                            <div class="about-circular-image-wrapper">
+                                <img src="{{ asset('FrontendAssets/images/about/about-right.jpg')}}" alt="About Right" class="about-circular-image">
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-3 col-sm-6 order-xl-2">
-                    <div class="about-right-image wow fadeInUp delay-0-6s">
-                        <img src="{{ asset('FrontendAssets/images/about/about-right.jpg')}}" alt="About Right">
+                    
+                    <!-- Desktop Side Images -->
+                    <div class="col-xl-3 col-sm-6 d-none d-md-block">
+                        <div class="about-left-image wow fadeInUp delay-0-2s">
+                            <img src="{{ asset('FrontendAssets/images/about/about-left.jpg')}}" alt="About Left">
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-6 align-self-center">
-                    <div class="about-content rp-15 rpb-90 text-center wow fadeInUp delay-0-4s">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="section-title mb-35">
-                                    <h2 class="title">we’re Best barbers & hair cutting salon</h2>
+                    
+                    <!-- Content Section -->
+                    <div class="col-xl-6 align-self-center">
+                        <div class="about-content rp-15 rpb-90 text-center wow fadeInUp delay-0-4s">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <div class="section-title mb-35">
+                                        <h2 class="title">we're Best barbers & hair cutting salon</h2>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        <div class="our-author mt-20">
-                            <img src="{{ asset('FrontendAssets/images/about/author.jpg')}}" alt="Authro">
-                            <div class="content">
-                                <h4>Def Cutz Studio CEO</h4>
-                                <img src="{{ asset('FrontendAssets/images/about/signature.png')}}" alt="Signature">
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+                            <div class="our-author mt-20">
+                                <img src="{{ asset('FrontendAssets/images/about/author.jpg')}}" alt="Authro">
+                                <div class="content">
+                                    <h4>Def Cutz Studio CEO</h4>
+                                    <img src="{{ asset('FrontendAssets/images/about/signature.png')}}" alt="Signature">
+                                </div>
                             </div>
+                            <img class="about-bg-shape d-none d-md-block" src="{{ asset('FrontendAssets/images/about/about-bg-shape.png')}}" alt="BG Shape">
                         </div>
-                        <img class="about-bg-shape" src="{{ asset('FrontendAssets/images/about/about-bg-shape.png')}}" alt="BG Shape">
+                    </div>
+                    
+                    <!-- Desktop Side Images -->
+                    <div class="col-xl-3 col-sm-6 order-xl-2 d-none d-md-block">
+                        <div class="about-right-image wow fadeInUp delay-0-6s">
+                            <img src="{{ asset('FrontendAssets/images/about/about-right.jpg')}}" alt="About Right">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -928,45 +1334,37 @@
                 </div>
             </div>
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-xl-3 col-sm-6">
-                        <div class="gallery-item wow fadeInUp delay-0-2s">
-                            <img src="{{ asset('FrontendAssets/images/gellary/p1.png')}}" alt="Gallery">
-                            <div class="gallery-content">
-                                <h3>Hair Cutting</h3>
-                                <p>Barbers & Salon Services</p>
-                                <a  class="details-btn"><i class="far fa-long-arrow-right"></i></a>
-                            </div>
+                <div class="circular-gallery">
+                    <div class="circular-gallery-item wow fadeInUp delay-0-2s">
+                        <img src="{{ asset('FrontendAssets/images/gellary/p1.png')}}" alt="Gallery" class="circular-gallery-image">
+                        <div class="circular-gallery-overlay">
+                            <h3>Hair Cutting</h3>
+                            <p>Barbers & Salon Services</p>
+                            <a href="#" class="details-btn"><i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <div class="gallery-item wow fadeInUp delay-0-4s">
-                            <img src="{{ asset('FrontendAssets/images/gellary/p2.png')}}" alt="Gallery">
-                            <div class="gallery-content">
-                                <h3>Hair Cutting</h3>
-                                <p>Barbers & Salon Services</p>
-                                <a  class="details-btn"><i class="far fa-long-arrow-right"></i></a>
-                            </div>
+                    <div class="circular-gallery-item wow fadeInUp delay-0-4s">
+                        <img src="{{ asset('FrontendAssets/images/gellary/p2.png')}}" alt="Gallery" class="circular-gallery-image">
+                        <div class="circular-gallery-overlay">
+                            <h3>Styling Services</h3>
+                            <p>Professional Hair Design</p>
+                            <a href="#" class="details-btn"><i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <div class="gallery-item wow fadeInUp delay-0-6s">
-                            <img src="{{ asset('FrontendAssets/images/gellary/p3.png')}}" alt="Gallery">
-                            <div class="gallery-content">
-                                <h3>Hair Cutting</h3>
-                                <p>Barbers & Salon Services</p>
-                                <a  class="details-btn"><i class="far fa-long-arrow-right"></i></a>
-                            </div>
+                    <div class="circular-gallery-item wow fadeInUp delay-0-6s">
+                        <img src="{{ asset('FrontendAssets/images/gellary/p3.png')}}" alt="Gallery" class="circular-gallery-image">
+                        <div class="circular-gallery-overlay">
+                            <h3>Beard Trimming</h3>
+                            <p>Premium Grooming Experience</p>
+                            <a href="#" class="details-btn"><i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-sm-6">
-                        <div class="gallery-item wow fadeInUp delay-0-8s">
-                            <img src="{{ asset('FrontendAssets/images/gellary/p4.png')}}" alt="Gallery">
-                            <div class="gallery-content">
-                                <h3>Hair Cutting</h3>
-                                <p>Barbers & Salon Services</p>
-                                <a  class="details-btn"><i class="far fa-long-arrow-right"></i></a>
-                            </div>
+                    <div class="circular-gallery-item wow fadeInUp delay-0-8s">
+                        <img src="{{ asset('FrontendAssets/images/gellary/p4.png')}}" alt="Gallery" class="circular-gallery-image">
+                        <div class="circular-gallery-overlay">
+                            <h3>Spa Treatment</h3>
+                            <p>Relaxation & Wellness</p>
+                            <a href="#" class="details-btn"><i class="far fa-long-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>

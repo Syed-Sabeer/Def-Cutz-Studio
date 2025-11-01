@@ -44,7 +44,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-2s">
                             <img src="{{ asset('FrontendAssets/images/gellary/gallery-big1.jpg')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/gallery-big1.jpg')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/gallery-big1.jpg')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-4s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p1.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p1.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p1.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-6s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p2.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p2.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p2.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-2s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p3.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p3.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p3.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-4s">
                             <img src="{{ asset('FrontendAssets/images/gellary/gallery-big2.jpg')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/gallery-big2.jpg')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/gallery-big2.jpg')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-6s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p4.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p4.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p4.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-2s">
                             <img src="{{ asset('FrontendAssets/images/gellary/gallery-big5.jpg')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/gallery-big5.jpg')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/gallery-big5.jpg')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-4s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p5.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p5.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p5.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-6s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p6.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p6.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p6.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-4s">
                             <img src="{{ asset('FrontendAssets/images/gellary/gallery-big1.jpg')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/gallery-big1.jpg')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/gallery-big1.jpg')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +124,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-6s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p7.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p7.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p7.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                         <div class="gallery-item style-two wow fadeInUp delay-0-2s">
                             <img src="{{ asset('FrontendAssets/images/gellary/p9.png')}}" alt="Gallery">
                             <div class="gallery-content">
-                                <a href="assets/images/gellary/p9.png')}}" class="icon"></a>
+                                <a href="{{asset('FrontendAssets/images/gellary/p9.png')}}" class="icon"></a>
                             </div>
                         </div>
                     </div>

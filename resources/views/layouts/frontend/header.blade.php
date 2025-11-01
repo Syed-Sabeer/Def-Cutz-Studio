@@ -31,55 +31,47 @@
                 <div class="container clearfix">
 
                     <div class="header-inner py-10 rpy-0 d-lg-flex align-items-center">
-                        <div class="logo-outer">
+                        <!-- Desktop Logo -->
+                        <div class="logo-outer d-none d-lg-block">
                             <div class="logo"><a href="{{ route('home') }}"><img src="{{ asset('FrontendAssets/images/logos/logo.png')}}" alt="Logo" title="Logo"></a></div>
+                        </div>
+                        
+                        <!-- Mobile Logo and Hamburger -->
+                        <div class="mobile-header-logo d-lg-none">
+                            <div class="mobile-logo-wrapper">
+                                <div class="mobile-logo">
+                                    <a href="{{ route('home') }}">
+                                        <img src="{{ asset('FrontendAssets/images/logos/logo.png')}}" alt="Logo" title="Logo" >
+                                        {{-- <span class="mobile-logo-text">THE BARBER SHOP</span> --}}
+                                    </a>
+                                </div>
+                                <!-- Toggle Button -->
+                                <button type="button" class="navbar-toggle drawer-toggle" id="drawerToggle">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
                         </div>
 
                         <div class="nav-outer clearfix mx-lg-auto">
                             <!-- Main Menu -->
                             <nav class="main-menu navbar-expand-lg">
-                                <div class="navbar-header">
-                                   <div class="mobile-logo my-15">
-                                       <a href="{{ route('home') }}">
-                                            <img src="{{ asset('FrontendAssets/images/logos/logo.png')}}" alt="Logo" title="Logo">
-                                       </a>
-                                   </div>
-
-                                    <!-- Toggle Button -->
-                                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                        <span class="icon-bar"></span>
-                                    </button>
+                                <div class="navbar-header d-none">
                                 </div>
 
-                                <div class="navbar-collapse collapse clearfix">
+                                <!-- Desktop Menu -->
+                                <div class="navbar-collapse collapse clearfix d-none d-lg-block">
                                     <ul class="navigation clearfix">
                                         <li ><a href="{{ route('home') }}">Home</a>
-
                                         </li>
                                         <li><a href="{{ route('service') }}">Services</a>
-
                                         </li>
                                         <li><a href="{{ route('portfolio') }}">portfolio</a>
-
                                         </li>
-                                        <!-- <li class="dropdown"><a href="#">pages</a>
-                                            <ul>
-                                                <li class="dropdown"><a href="#">Shop</a>
-                                                    <ul>
-                                                        <li><a href="shop.html">Shop</a></li>
-                                                        <li><a href="product-details.html">Product Details</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="about.html">about us</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="offers.html">Our Offers</a></li>
-                                            </ul>
-                                        </li> -->
                                         <li><a href="{{ route('about') }}">About</a>
+                                        </li>
                                         <li><a href="{{ route('blog') }}">blog</a>
-
                                         </li>
                                         <li><a href="{{ route('contact') }}">Contact</a></li>
                                     </ul>
@@ -87,6 +79,33 @@
 
                             </nav>
                             <!-- Main Menu End-->
+                        </div>
+                        
+                        <!-- Mobile Drawer Menu -->
+                        <div class="drawer-menu-overlay" id="drawerOverlay"></div>
+                        <div class="drawer-menu" id="drawerMenu">
+                            <div class="drawer-menu-header">
+                                <div class="drawer-logo">
+                                    <a href="{{ route('home') }}">
+                                        <img src="{{ asset('FrontendAssets/images/logos/logo.png')}}" alt="Logo" title="Logo">
+                                        {{-- <span class="logo-text">DEF CUTZ</span> --}}
+                                    </a>
+                                </div>
+                                <button class="drawer-close" id="drawerClose">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="drawer-menu-content">
+                               
+                                <ul class="drawer-navigation">
+                                    <li><a href="{{ route('home') }}">Home</a></li>
+                                    <li><a href="{{ route('about') }}">About</a></li>
+                                    <li><a href="{{ route('portfolio') }}">Locations</a></li>
+                                    <li><a href="{{ route('service') }}">Services</a></li>
+                                    <li><a href="{{ route('contact') }}">Contact</a></li>
+                                    <li><a href="{{ route('appointment') }}">Book Now</a></li>
+                                </ul>
+                            </div>
                         </div>
 
                         <!-- Menu Button -->

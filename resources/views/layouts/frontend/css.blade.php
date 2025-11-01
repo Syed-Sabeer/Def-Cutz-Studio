@@ -268,7 +268,7 @@
         display: block;
         width: 28px;
         height: 3px;
-        background-color: #333;
+        background-color: #fff;
         border-radius: 2px;
         transition: all 0.3s ease;
     }

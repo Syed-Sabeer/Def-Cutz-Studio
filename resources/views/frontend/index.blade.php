@@ -422,12 +422,11 @@
                 <div class="what-we-do-inner">
                     <div class="row">
                         <div class="col-xl-4">
-                            <div
-    class="feature-image wow fadeInLeft delay-0-2s"
-    style="background-image: url('{{ asset('FrontendAssets/images/about/what-we-do.jpg') }}');">
+    <div class="feature-image wow fadeInLeft delay-0-2s">
+        <img src="{{ asset('FrontendAssets/images/about/what-we-do.jpg') }}" alt="What We Do" class="img-fluid">
+    </div>
 </div>
 
-                        </div>
                         <div class="col-xl-8 align-self-center">
                             <div class="what-we-do-content wow fadeInRight delay-0-2s">
                                 <div class="row">

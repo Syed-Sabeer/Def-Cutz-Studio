@@ -12,7 +12,7 @@
         gap: 40px;
         padding: 40px 0;
     }
-    
+
     .circular-gallery-item {
         position: relative;
         width: 280px;
@@ -20,11 +20,11 @@
         cursor: pointer;
         transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     }
-    
+
     .circular-gallery-item:hover {
         transform: translateY(-15px) scale(1.05);
     }
-    
+
     .circular-gallery-item::before {
         content: '';
         position: absolute;
@@ -40,17 +40,17 @@
         transition: opacity 0.3s ease;
         z-index: -1;
     }
-    
+
     .circular-gallery-item:hover::before {
         opacity: 0.6;
     }
-    
+
     @keyframes gradient-rotate {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
-    
+
     .circular-gallery-image {
         width: 100%;
         height: 100%;
@@ -61,12 +61,12 @@
                     0 0 0 3px rgba(255, 215, 0, 0.3);
         transition: all 0.4s ease;
     }
-    
+
     .circular-gallery-item:hover .circular-gallery-image {
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3),
                     0 0 0 8px rgba(255, 215, 0, 0.5);
     }
-    
+
     .circular-gallery-overlay {
         position: absolute;
         top: 0;
@@ -85,11 +85,11 @@
         text-align: center;
         padding: 20px;
     }
-    
+
     .circular-gallery-item:hover .circular-gallery-overlay {
         opacity: 1;
     }
-    
+
     .circular-gallery-overlay h3 {
         font-size: 22px;
         font-weight: 700;
@@ -97,11 +97,11 @@
         transform: translateY(20px);
         transition: transform 0.4s ease 0.1s;
     }
-    
+
     .circular-gallery-item:hover .circular-gallery-overlay h3 {
         transform: translateY(0);
     }
-    
+
     .circular-gallery-overlay p {
         font-size: 14px;
         margin-bottom: 15px;
@@ -109,11 +109,11 @@
         transform: translateY(20px);
         transition: transform 0.4s ease 0.15s;
     }
-    
+
     .circular-gallery-item:hover .circular-gallery-overlay p {
         transform: translateY(0);
     }
-    
+
     .circular-gallery-overlay .details-btn {
         width: 50px;
         height: 50px;
@@ -129,40 +129,40 @@
         transition: all 0.4s ease 0.2s;
         backdrop-filter: blur(10px);
     }
-    
+
     .circular-gallery-item:hover .circular-gallery-overlay .details-btn {
         transform: scale(1) rotate(0deg);
     }
-    
+
     .circular-gallery-overlay .details-btn:hover {
         background: rgba(255, 255, 255, 0.5);
         transform: scale(1.1) rotate(360deg);
     }
-    
+
     @media (max-width: 768px) {
         .circular-gallery-item {
             width: 220px;
             height: 220px;
         }
-        
+
         .circular-gallery {
             gap: 30px;
         }
     }
-    
+
     @media (max-width: 576px) {
         .circular-gallery-item {
             width: 180px;
             height: 180px;
         }
     }
-    
+
     /* About Us Section - Circular Design for Mobile */
     .about-us-area {
         position: relative;
         padding: 60px 0;
     }
-    
+
     .about-us-circular-wrapper {
         display: flex;
         justify-content: center;
@@ -170,13 +170,13 @@
         gap: 20px;
         margin-bottom: 40px;
     }
-    
+
     .about-circular-image-wrapper {
         position: relative;
         width: 150px;
         height: 150px;
     }
-    
+
     .about-circular-image {
         width: 100%;
         height: 100%;
@@ -187,13 +187,13 @@
                     0 0 0 4px rgba(255, 215, 0, 0.2);
         transition: all 0.4s ease;
     }
-    
+
     .about-circular-image-wrapper:hover .about-circular-image {
         transform: scale(1.1);
         box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25),
                     0 0 0 6px rgba(255, 215, 0, 0.4);
     }
-    
+
     .about-circular-image-wrapper::before {
         content: '';
         position: absolute;
@@ -209,24 +209,24 @@
         transition: opacity 0.3s ease;
         z-index: -1;
     }
-    
+
     .about-circular-image-wrapper:hover::before {
         opacity: 0.5;
     }
-    
+
     /* Desktop Layout */
     @media (min-width: 992px) {
         .about-us-area .row {
             display: flex;
             align-items: center;
         }
-        
+
         .about-left-image,
         .about-right-image {
             height: 100%;
             overflow: hidden;
         }
-        
+
         .about-left-image img,
         .about-right-image img {
             width: 100%;
@@ -234,49 +234,49 @@
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-        
+
         .about-left-image:hover img,
         .about-right-image:hover img {
             transform: scale(1.05);
         }
     }
-    
+
     /* Tablet Layout */
     @media (max-width: 991px) and (min-width: 768px) {
         .about-us-circular-wrapper {
             gap: 30px;
         }
-        
+
         .about-circular-image-wrapper {
             width: 200px;
             height: 200px;
         }
     }
-    
+
     /* Mobile Layout - Stack Images Vertically or Horizontally with Circular Design */
     @media (max-width: 767px) {
         .about-us-area {
             padding: 15px 0 30px 0;
         }
-        
+
         .about-us-area .container {
             padding-top: 0 !important;
         }
-        
+
         .about-us-area .row {
             flex-direction: column;
             margin-top: 0;
         }
-        
+
         .about-us-area .row > div {
             padding-top: 0;
         }
-        
+
         .about-left-image,
         .about-right-image {
             display: none; /* Hide original images on mobile */
         }
-        
+
         .about-us-circular-wrapper {
             display: flex;
             justify-content: center;
@@ -285,35 +285,35 @@
             margin: 10px 0 20px 0;
             order: -1; /* Show images before content on mobile */
         }
-        
+
         .about-circular-image-wrapper {
             width: 170px;
             height: 170px;
         }
-        
+
         .about-content {
             padding: 15px 15px !important;
             padding-top: 5px !important;
         }
-        
+
         .about-content .section-title h2 {
             font-size: 24px;
             line-height: 1.3;
             margin-bottom: 20px;
         }
-        
+
         .about-content p {
             font-size: 15px;
             line-height: 1.6;
             margin-bottom: 25px;
         }
-        
+
         .our-author {
             flex-direction: column;
             text-align: center;
             margin-top: 30px;
         }
-        
+
         .our-author img {
             width: 100px;
             height: 100px;
@@ -321,70 +321,70 @@
             margin-bottom: 15px;
             object-fit: cover;
         }
-        
+
         .our-author .content {
             margin-left: 0;
         }
-        
+
         .our-author .content img {
             width: 120px;
             height: auto;
             margin-top: 10px;
         }
     }
-    
+
     @media (max-width: 576px) {
         .about-us-area {
             padding: 10px 0 25px 0;
         }
-        
+
         .about-us-area .container {
             padding-top: 0 !important;
         }
-        
+
         .about-us-circular-wrapper {
             gap: 20px;
             flex-wrap: wrap;
             margin: 5px 0 15px 0;
         }
-        
+
         .about-circular-image-wrapper {
             width: 150px;
             height: 150px;
         }
-        
+
         .about-content .section-title h2 {
             font-size: 22px;
         }
-        
+
         .about-content p {
             font-size: 14px;
         }
     }
-    
+
     @media (max-width: 480px) {
         .about-us-area {
             padding: 5px 0 20px 0;
         }
-        
+
         .about-us-area .container {
             padding-top: 0 !important;
         }
-        
+
         .about-us-circular-wrapper {
             gap: 15px;
             margin: 0 0 15px 0;
         }
-        
+
         .about-content {
             padding-top: 0 !important;
         }
-        
+
         .about-circular-image-wrapper {
             width: 130px;
             height: 130px;
         }
-        
+
         .about-circular-image {
             border-width: 4px;
         }
@@ -422,7 +422,11 @@
                 <div class="what-we-do-inner">
                     <div class="row">
                         <div class="col-xl-4">
-                            <div class="feature-image wow fadeInLeft delay-0-2s" style="background-image: url({{asset('FrontendAssets/images/about/what-we-do.jpg')}});"></div>
+                            <div
+    class="feature-image wow fadeInLeft delay-0-2s"
+    style="background-image: url('{{ asset('FrontendAssets/images/about/what-we-do.jpg') }}');">
+</div>
+
                         </div>
                         <div class="col-xl-8 align-self-center">
                             <div class="what-we-do-content wow fadeInRight delay-0-2s">
@@ -504,14 +508,14 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <!-- Desktop Side Images -->
                     <div class="col-xl-3 col-sm-6 d-none d-md-block">
                         <div class="about-left-image wow fadeInUp delay-0-2s">
                             <img src="{{ asset('FrontendAssets/images/about/about-left.jpg')}}" alt="About Left">
                         </div>
                     </div>
-                    
+
                     <!-- Content Section -->
                     <div class="col-xl-6 align-self-center">
                         <div class="about-content rp-15 rpb-90 text-center wow fadeInUp delay-0-4s">
@@ -533,7 +537,7 @@
                             <img class="about-bg-shape d-none d-md-block" src="{{ asset('FrontendAssets/images/about/about-bg-shape.png')}}" alt="BG Shape">
                         </div>
                     </div>
-                    
+
                     <!-- Desktop Side Images -->
                     <div class="col-xl-3 col-sm-6 order-xl-2 d-none d-md-block">
                         <div class="about-right-image wow fadeInUp delay-0-6s">
